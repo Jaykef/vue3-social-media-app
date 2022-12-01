@@ -22,7 +22,7 @@ body {
 }
 
 .follow-status {
-  margin-right: 30px;
+  margin-right: 20px;
   margin-bottom: 25px;
   border-radius: 1rem;
   font-size: 18px;
@@ -87,19 +87,6 @@ label {
 li {
   font-size: 18px;
   list-style: none;
-}
-
-.nav-bar {
-  background: linear-gradient(-90deg, #84cf6a, #16c0b0);
-  height: 60px;
-  margin-bottom: 25px;
-  -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.57);
-}
-
-.out-of-stock-img {
-  opacity:0.5
 }
 
 p {
@@ -190,18 +177,49 @@ textarea {
   border: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
+@media screen and (max-width: 942px) {
+  .profile-container {
+    display: block;
   }
-
-  .profile-image,
-  .profile-info {
-    margin-left: 10px;
+  h1 {
+    font-size: 30px;
+  }
+  img {
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .profile-info,
+  .profile-image {
     width: 100%;
+    text-align: center;
+    margin-left: 0px;
   }
-
   .post-form {
     width: 90%;
   }
+  .button {
+    margin: 7px;
+    background-color: #010101;
+    font-size: 13px;
+    width: 124px;
+    font-weight: 600;
+    max-height: 78px;
+    color: white;
+    padding: 11px;
+  }
+  .follow-status {
+    margin: 5px;
+    margin-bottom: 20px;    
+    font-size: 15px;
+    width: 111px;
+  }
+  .post-container {
+    margin-top: 12px;
+    text-align: left;
+  }
+
 }
+
+
+
