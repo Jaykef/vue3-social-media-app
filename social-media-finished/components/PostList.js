@@ -3,19 +3,24 @@ app.component('post-list', {
         posts: {
             type: Array,
             required: true
+        },
+        totalPosts: {
+            type: Number,
+            required: false 
         }
     },
     template:
     /*html*/
     `
     <!--<h3>My Posts:</h3>-->
-        <div v-for="(post, index) in posts" :key="index" class="post-container">
-            <h3>{{ post.body }}</h3><span>posted {{post.date}}</span>
-            <button @click="deletePost" class="delButton">Delete</button>
-        </div>`,
+    <div v-for="(post, index) in posts" :key="index" class="post-container">
+        <h3>{{ post.body }}</h3><span>posted {{post.date}}</span>
+        <button @click="deletePost" class="delButton">Delete</button>
+    </div>`,
     methods: {
         deletePost() {
             this.posts.splice(this.posts.indexOf(1));
+            this.$emit('delete-post')
         },
     }
 })
