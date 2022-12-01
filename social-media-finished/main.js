@@ -1,8 +1,1 @@
-const app = Vue.createApp({
-    data() {
-        return {
-            isFollowing: true
-        }
-    },
-    methods: {}
-})
+const app = Vue.createApp({})
