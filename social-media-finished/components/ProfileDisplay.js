@@ -1,10 +1,4 @@
 app.component('profile-display', {
-    props: {
-        isFollowing: {
-            type: Boolean,
-            required: false
-        }
-    },
     template:
     /*html*/
     `
@@ -16,15 +10,15 @@ app.component('profile-display', {
           </div>
           <div class="profile-info">
             <h1>{{ name }}</h1>
-            <button class="button">Posts: {{ totalPosts }} </button>
-            <button class="button">Followers: {{ followers }}</button>
-            <button class="button">Following: {{ following }}</button>
+            <div class="stats">Posts: {{ totalPosts }} </div>
+            <div class="stats">Followers: {{ followers }}</div>
+            <div class="stats">Following: {{ following }}</div>
             <p>{{ bio }}</p>
             <button class="follow-status" :isFollowing="followUser" v-text="buttonText2"></button>
             <button class="follow-status" @click="followUser" v-text="buttonText"></button>
 
-            <post-list v-if="posts.length" :posts="posts"></post-list>
-            <post-form @post-submitted="addPost" @deleted-post="deletedPost"></post-form>
+            <post-list v-if="posts.length" :posts="posts" @delete-post="deletePost"></post-list>
+            <post-form @post-submitted="addPost"></post-form>
           </div>
         </div>
       </div>`,
@@ -45,9 +39,8 @@ app.component('profile-display', {
               this.posts.push(post)
               this.totalPosts += 1
           },
-          deletedPost() {
-            this.totalPosts -= 1
-            this.$emit('deleted-post')
+          deletePost() {
+            this.totalPosts -= 1;
           },
           followUser() {
             this.isFollowing = ! this.isFollowing;
