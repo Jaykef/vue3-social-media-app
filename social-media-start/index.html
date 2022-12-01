@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Intro to Vue</title>
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="" href="./assets/dark.scss" />
     <!-- Import Vue.js CDN -->
     <script src="https://unpkg.com/vue@3"></script>
   </head>
@@ -12,30 +14,15 @@
     <div id="app">
       <div class="profile-display">
         <div class="profile-container">
-          <div class="profile-image">
-            <img :src="image" alt="my profile">
-          </div>
-          <div class="profile-info">
-            <h1>{{ name }}</h1>
-            <button class="button">Posts: {{ totalPosts }}</button>
-            <button class="button" >Followers: {{ followers }}</button>
-            <button class="button">Following: {{ following }}</button>
-            <p>{{ bio }}</p>
-            <button :isFollowing="followUser" v-text="buttonText2" class="follow-status"></button>
-            <button @click="followUser" v-text="buttonText" class="follow-status"></button>
-            
-            <div v-for="(post, index) in posts" :key="index" class="post-container">
-              <h3>{{ post.body }}</h3><span>posted {{post.date}}</span>
-              <button @click="deletePost" class="delButton">Delete</button>
-            </div>
-
-            <form class="post-form" @submit.prevent="onSubmit">
-              <h3>Create a post</h3>    
-              <textarea id="body" v-model="body"></textarea>  
-              <input class="button" type="submit" value="Post">  
           
-            </form>
+          <div class="profile-image">
+            <!-- Profile image goes here -->
           </div>
+          
+          <div class="profile-info">
+            <!-- Profile info and form goes here -->
+          </div>
+          
         </div>
       </div>
     </div>
@@ -43,8 +30,6 @@
     <!-- Import app -->
     <script src="./main.js"></script>
     <!-- Mount app -->
-    <script>
-      const mountedApp = app.mount('#app')
-    </script>
+    <script>// mount logic goes here</script>
   </body>
 </html>
