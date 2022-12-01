@@ -12,7 +12,6 @@ app.component('post-form', {
       return {
           body: '',
           date: ''
-
       }
   },
   methods: {
@@ -24,7 +23,6 @@ app.component('post-form', {
           const current = new Date();
           const dateNow = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()} - ${current.getSeconds()+" secs ago"}`;
         
-
           let myPost = {
               body: this.body,
               date: dateNow
