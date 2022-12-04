@@ -194,9 +194,6 @@ textarea {
 }
 
 @media screen and (max-width: 942px) {
-  .profile-container {
-    display: block;
-  }
   h1 {
     font-size: 30px;
   }
@@ -204,6 +201,9 @@ textarea {
     text-align: center;
     justify-content: center;
     margin: 0;
+  }
+  .profile-container {
+    display: block;
   }
   .profile-info,
   .profile-image {
